@@ -81,7 +81,7 @@ switch ($action) {
         $stmt = $db->prepare('SELECT MAX(created_at) AS last_version FROM document_versions WHERE document_id = ?');
         $stmt->execute([$id]);
         $lastVersion = $stmt->fetchColumn();
-        if (!$lastVersion || (time() - strtotime($lastVersion)) > 120) {
+        if (!$lastVersion || (time() - strtotime($lastVersion)) > DOCUMENT_VERSION_THROTTLE_SECONDS) {
             $stmt = $db->prepare('INSERT INTO document_versions (document_id, content, word_count, created_at) VALUES (?, ?, ?, NOW())');
             $stmt->execute([$id, $content, $wordCount]);
         }

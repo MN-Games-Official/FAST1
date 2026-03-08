@@ -137,10 +137,10 @@ if ($assignId) {
     }
 }
 if ($docContent) {
-    $context['document'] = mb_substr($docContent, 0, 8000);
+    $context['document'] = mb_substr($docContent, 0, AI_MAX_DOCUMENT_CONTEXT_LENGTH);
 }
 if ($selection) {
-    $context['selection'] = mb_substr($selection, 0, 2000);
+    $context['selection'] = mb_substr($selection, 0, AI_MAX_SELECTION_LENGTH);
 }
 
 // Include recent conversation history

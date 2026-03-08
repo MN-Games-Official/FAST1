@@ -13,7 +13,7 @@
   const wordCountEl  = document.getElementById('word-count');
 
   let autosaveTimer  = null;
-  const AUTOSAVE_MS  = 5000;
+  const AUTOSAVE_MS  = (typeof APP !== 'undefined' && APP.autosaveIntervalMs) || 5000;
 
   /* -------------------------------------------------------------------- */
   /*  Formatting commands                                                 */

@@ -157,6 +157,7 @@ if ($assignmentId) {
       assignmentId: <?= $assignmentId ? (int)$assignmentId : 'null' ?>,
       csrfToken: '<?= csrf_token() ?>',
       userId: <?= (int)$user['id'] ?>,
+      autosaveIntervalMs: <?= defined('AUTOSAVE_INTERVAL_MS') ? (int)AUTOSAVE_INTERVAL_MS : 5000 ?>,
     };
   </script>
   <script src="/assets/js/editor.js"></script>

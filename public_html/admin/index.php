@@ -9,10 +9,11 @@ require_once __DIR__ . '/../includes/helpers.php';
 $user = require_role('admin');
 $db   = get_db();
 
-// Stats
+// Stats — use a whitelist of table names for safety
 $stats = [];
-foreach (['users', 'schools', 'classes', 'documents', 'assignments', 'ai_events', 'policy_violations'] as $table) {
-    $stmt = $db->query("SELECT COUNT(*) FROM `$table`");
+$allowedTables = ['users', 'schools', 'classes', 'documents', 'assignments', 'ai_events', 'policy_violations'];
+foreach ($allowedTables as $table) {
+    $stmt = $db->query('SELECT COUNT(*) FROM `' . $table . '`');
     $stats[$table] = $stmt->fetchColumn();
 }
 ?>
