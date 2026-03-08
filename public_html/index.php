@@ -3,6 +3,7 @@
  * AI Education App — Landing / Entry Point
  */
 require_once __DIR__ . '/includes/auth.php';
+require_once __DIR__ . '/includes/helpers.php';
 
 init_session();
 $user = current_user();
