@@ -1,0 +1,8 @@
+public_html/storage/uploads/*
+public_html/storage/exports/*
+public_html/storage/temp/*
+!public_html/storage/uploads/.gitkeep
+!public_html/storage/exports/.gitkeep
+!public_html/storage/temp/.gitkeep
+*.log
+.env

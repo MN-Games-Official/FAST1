@@ -1,0 +1,39 @@
+/* AI Education App — Editor-specific Styles */
+
+/* Canvas appearance */
+#editor {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #1f2937;
+}
+
+#editor:focus {
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+/* Selection highlight */
+#editor ::selection {
+  background-color: rgba(99, 102, 241, 0.2);
+}
+
+/* Scrollbar styling */
+#ai-chat::-webkit-scrollbar {
+  width: 6px;
+}
+#ai-chat::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 3px;
+}
+
+/* Print styles */
+@media print {
+  nav, aside, #toolbar, #ai-sidebar {
+    display: none !important;
+  }
+  #editor {
+    box-shadow: none;
+    padding: 0;
+    max-width: 100%;
+  }
+}
