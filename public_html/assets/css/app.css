@@ -1,0 +1,31 @@
+/* AI Education App — Global Styles */
+
+/* Editor placeholder */
+#editor.is-empty::before {
+  content: attr(data-placeholder);
+  color: #9ca3af;
+  pointer-events: none;
+  position: absolute;
+}
+
+#editor {
+  position: relative;
+}
+
+/* Toolbar buttons */
+.toolbar-btn {
+  @apply px-3 py-1 rounded text-sm text-gray-700 hover:bg-gray-100 transition;
+}
+
+/* AI mode buttons */
+.ai-mode-btn {
+  @apply w-full text-left px-3 py-2 rounded-lg text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition;
+}
+
+/* Prose overrides for editor */
+#editor h1 { font-size: 1.875rem; font-weight: 700; margin-bottom: 0.5rem; }
+#editor h2 { font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem; }
+#editor h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; }
+#editor p  { margin-bottom: 0.75rem; }
+#editor ul, #editor ol { margin-left: 1.5rem; margin-bottom: 0.75rem; }
+#editor li { margin-bottom: 0.25rem; }
